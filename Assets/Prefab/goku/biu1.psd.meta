@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: 924025c27095bc1428a8fff546340e76
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8667423979505366551
+    second: biu1_0
+  - first:
+      213: 8419060987701863253
+    second: biu1_1
+  - first:
+      213: -2099912678774767920
+    second: biu1_2
+  - first:
+      213: -8214990145985617296
+    second: biu1_3
+  - first:
+      213: -8149342928653009372
+    second: biu1_4
+  - first:
+      213: -4350233426927413420
+    second: biu1_5
+  - first:
+      213: 2798294289788437701
+    second: biu1_6
+  - first:
+      213: -6405053097630117433
+    second: biu1_7
+  - first:
+      213: -6773688313241531730
+    second: biu1_8
+  - first:
+      213: -4783776186678808068
+    second: biu1_9
+  - first:
+      213: 6496806133166940860
+    second: biu1_10
+  - first:
+      213: -4344755511205502897
+    second: biu1_11
+  - first:
+      213: 8654433762066796753
+    second: biu1_12
+  - first:
+      213: 635317849044369898
+    second: biu1_13
+  - first:
+      213: 6872724702143933
+    second: biu1_14
+  - first:
+      213: -2341403469627816838
+    second: biu1_15
+  - first:
+      213: 6253905423553121144
+    second: biu1_16
+  - first:
+      213: 7004701338200541309
+    second: biu1_17
+  - first:
+      213: -3175937959721231384
+    second: biu1_18
+  - first:
+      213: 6014443588739954217
+    second: biu1_19
+  - first:
+      213: -6116902870173925037
+    second: biu1_20
+  - first:
+      213: -1755081395723395679
+    second: biu1_21
+  - first:
+      213: 722932021164535148
+    second: biu1_22
+  - first:
+      213: 3103714178721454993
+    second: biu1_23
+  - first:
+      213: 149429634358445496
+    second: biu1_24
+  - first:
+      213: 847446180399746857
+    second: biu1_25
+  - first:
+      213: 8125229532461450453
+    second: biu1_26
+  - first:
+      213: 9054161526127651196
+    second: biu1_27
+  - first:
+      213: 7364213558892373222
+    second: biu1_28
+  - first:
+      213: -329929151541341685
+    second: biu1_29
+  - first:
+      213: 7833763973381521996
+    second: biu1_30
+  - first:
+      213: 6064949600341415920
+    second: biu1_31
+  - first:
+      213: 5066560872392505075
+    second: biu1_32
+  - first:
+      213: 8311173923681533582
+    second: biu1_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: biu1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 1500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a5b270869776a4993b01399d3095d0
+      internalID: 8667423979505366551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c599c32d020034f44a38ad0f28da02f1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      biu1_0: 8667423979505366551
+      biu1_1: 8419060987701863253
+      biu1_10: 6496806133166940860
+      biu1_11: -4344755511205502897
+      biu1_12: 8654433762066796753
+      biu1_13: 635317849044369898
+      biu1_14: 6872724702143933
+      biu1_15: -2341403469627816838
+      biu1_16: 6253905423553121144
+      biu1_17: 7004701338200541309
+      biu1_18: -3175937959721231384
+      biu1_19: 6014443588739954217
+      biu1_2: -2099912678774767920
+      biu1_20: -6116902870173925037
+      biu1_21: -1755081395723395679
+      biu1_22: 722932021164535148
+      biu1_23: 3103714178721454993
+      biu1_24: 149429634358445496
+      biu1_25: 847446180399746857
+      biu1_26: 8125229532461450453
+      biu1_27: 9054161526127651196
+      biu1_28: 7364213558892373222
+      biu1_29: -329929151541341685
+      biu1_3: -8214990145985617296
+      biu1_30: 7833763973381521996
+      biu1_31: 6064949600341415920
+      biu1_32: 5066560872392505075
+      biu1_33: 8311173923681533582
+      biu1_4: -8149342928653009372
+      biu1_5: -4350233426927413420
+      biu1_6: 2798294289788437701
+      biu1_7: -6405053097630117433
+      biu1_8: -6773688313241531730
+      biu1_9: -4783776186678808068
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

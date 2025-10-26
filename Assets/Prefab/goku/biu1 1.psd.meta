@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: f090cdfb939f94342b723ed386db2d5c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8667423979505366551
+    second: biu1_0
+  - first:
+      213: 8419060987701863253
+    second: biu1_1
+  - first:
+      213: -2099912678774767920
+    second: biu1_2
+  - first:
+      213: -8214990145985617296
+    second: biu1_3
+  - first:
+      213: -8149342928653009372
+    second: biu1_4
+  - first:
+      213: -4350233426927413420
+    second: biu1_5
+  - first:
+      213: 2798294289788437701
+    second: biu1_6
+  - first:
+      213: -6405053097630117433
+    second: biu1_7
+  - first:
+      213: -6773688313241531730
+    second: biu1_8
+  - first:
+      213: -4783776186678808068
+    second: biu1_9
+  - first:
+      213: 6496806133166940860
+    second: biu1_10
+  - first:
+      213: -4344755511205502897
+    second: biu1_11
+  - first:
+      213: 8654433762066796753
+    second: biu1_12
+  - first:
+      213: 635317849044369898
+    second: biu1_13
+  - first:
+      213: 6872724702143933
+    second: biu1_14
+  - first:
+      213: -2341403469627816838
+    second: biu1_15
+  - first:
+      213: 6253905423553121144
+    second: biu1_16
+  - first:
+      213: 7004701338200541309
+    second: biu1_17
+  - first:
+      213: -3175937959721231384
+    second: biu1_18
+  - first:
+      213: 6014443588739954217
+    second: biu1_19
+  - first:
+      213: -6116902870173925037
+    second: biu1_20
+  - first:
+      213: -1755081395723395679
+    second: biu1_21
+  - first:
+      213: 722932021164535148
+    second: biu1_22
+  - first:
+      213: 3103714178721454993
+    second: biu1_23
+  - first:
+      213: 149429634358445496
+    second: biu1_24
+  - first:
+      213: 847446180399746857
+    second: biu1_25
+  - first:
+      213: 8125229532461450453
+    second: biu1_26
+  - first:
+      213: 9054161526127651196
+    second: biu1_27
+  - first:
+      213: 7364213558892373222
+    second: biu1_28
+  - first:
+      213: -329929151541341685
+    second: biu1_29
+  - first:
+      213: 7833763973381521996
+    second: biu1_30
+  - first:
+      213: 6064949600341415920
+    second: biu1_31
+  - first:
+      213: 5066560872392505075
+    second: biu1_32
+  - first:
+      213: 8311173923681533582
+    second: biu1_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: biu1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 917
+        height: 1494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 716be18ff20e84870800000000000000
+      internalID: 8667423979505366551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_1
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 965
+        width: 77
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 553a15abc5386d470800000000000000
+      internalID: 8419060987701863253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_2
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 963
+        width: 49
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0de7a426b8c9bd2e0800000000000000
+      internalID: -2099912678774767920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_3
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 967
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0726133bcfd7efd80800000000000000
+      internalID: -8214990145985617296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_4
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 900
+        width: 49
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42ebbc098c7b7ee80800000000000000
+      internalID: -8149342928653009372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_5
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 905
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45716f92fbdd0a3c0800000000000000
+      internalID: -4350233426927413420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_6
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 860
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c408df94d985d620800000000000000
+      internalID: 2798294289788437701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_7
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 852
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c1dd34a42eac17a0800000000000000
+      internalID: -6405053097630117433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_8
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 770
+        width: 29
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa060e1e560ff1a0800000000000000
+      internalID: -6773688313241531730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_9
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 840
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf1790c57ec9c9db0800000000000000
+      internalID: -4783776186678808068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_10
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 732
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb2aefda1ca492a50800000000000000
+      internalID: 6496806133166940860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_11
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 716
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40ecaec1e354b3c0800000000000000
+      internalID: -4344755511205502897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 712
+        width: 40
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0932847a9ba1870800000000000000
+      internalID: 8654433762066796753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_13
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 564
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae141c7b73a11d800800000000000000
+      internalID: 635317849044369898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_14
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 577
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5a28ae4ba681000800000000000000
+      internalID: 6872724702143933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_15
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 555
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7487fc13f9a18fd0800000000000000
+      internalID: -2341403469627816838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_16
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 536
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87bc5cd19d55ac650800000000000000
+      internalID: 6253905423553121144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_17
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 460
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78852d21c2b53160800000000000000
+      internalID: 7004701338200541309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_18
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 408
+        width: 70
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb1322a04dcce3d0800000000000000
+      internalID: -3175937959721231384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_19
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 444
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926787cf398977350800000000000000
+      internalID: 6014443588739954217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_20
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 416
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35147b19f356c1ba0800000000000000
+      internalID: -6116902870173925037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_21
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 386
+        width: 41
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad9208f4c2b4a7e0800000000000000
+      internalID: -1755081395723395679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_22
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 308
+        width: 76
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d644ec7de580a00800000000000000
+      internalID: 722932021164535148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_23
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 354
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b1903f99b921b20800000000000000
+      internalID: 3103714178721454993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_24
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 340
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b50ad2f571e21200800000000000000
+      internalID: 149429634358445496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_25
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 316
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f0df4afcbb2cb00800000000000000
+      internalID: 847446180399746857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_26
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 283
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d4c0e0e53d92c070800000000000000
+      internalID: 8125229532461450453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_27
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 274
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79e8dfdfe7d6ad70800000000000000
+      internalID: 9054161526127651196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_28
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 281
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e425ebe631f23660800000000000000
+      internalID: 7364213558892373222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_29
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 248
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0215594f2bdb6bf0800000000000000
+      internalID: -329929151541341685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_30
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 230
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4288a724de17bc60800000000000000
+      internalID: 7833763973381521996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_31
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 92
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f75ffc27870b2450800000000000000
+      internalID: 6064949600341415920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_32
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 0
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f639d7054a005640800000000000000
+      internalID: 5066560872392505075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biu1_33
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 0
+        width: 146
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8ef68b26a8375370800000000000000
+      internalID: 8311173923681533582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      biu1_0: 8667423979505366551
+      biu1_1: 8419060987701863253
+      biu1_10: 6496806133166940860
+      biu1_11: -4344755511205502897
+      biu1_12: 8654433762066796753
+      biu1_13: 635317849044369898
+      biu1_14: 6872724702143933
+      biu1_15: -2341403469627816838
+      biu1_16: 6253905423553121144
+      biu1_17: 7004701338200541309
+      biu1_18: -3175937959721231384
+      biu1_19: 6014443588739954217
+      biu1_2: -2099912678774767920
+      biu1_20: -6116902870173925037
+      biu1_21: -1755081395723395679
+      biu1_22: 722932021164535148
+      biu1_23: 3103714178721454993
+      biu1_24: 149429634358445496
+      biu1_25: 847446180399746857
+      biu1_26: 8125229532461450453
+      biu1_27: 9054161526127651196
+      biu1_28: 7364213558892373222
+      biu1_29: -329929151541341685
+      biu1_3: -8214990145985617296
+      biu1_30: 7833763973381521996
+      biu1_31: 6064949600341415920
+      biu1_32: 5066560872392505075
+      biu1_33: 8311173923681533582
+      biu1_4: -8149342928653009372
+      biu1_5: -4350233426927413420
+      biu1_6: 2798294289788437701
+      biu1_7: -6405053097630117433
+      biu1_8: -6773688313241531730
+      biu1_9: -4783776186678808068
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
