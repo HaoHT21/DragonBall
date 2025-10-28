@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BossAI : MonoBehaviour
 {
-    // === CẤU HÌNH ===
-    [Header("Cấu hình")]
+    // === CẤU HÌNH ===
+    [Header("Cấu hình")]
     public Transform player;
     public float detectionRange = 10f;
     public float attackRange = 2f;
@@ -13,7 +13,7 @@ public class BossAI : MonoBehaviour
     public float waitAfterAttack = 1.5f;
     public float attackDamage = 15f;
     public float kiBlastSpeed = 15f;
-    public float kiBlastTime = 0.5f; // THÊM: Thời gian chạy Animation Ki Blast (Đồng bộ với Animation)
+    public float kiBlastTime = 0.5f;
 
     [Header("Combat Points")]
     public float bossMeleeRange = 0.7f;
@@ -26,10 +26,16 @@ public class BossAI : MonoBehaviour
     [Header("Hiệu ứng")]
     public GameObject hitEffectPrefab;
 
-    // === THÀNH PHẦN & TRẠNG THÁI ===
-    private Rigidbody2D rb;
+    // <-- THÊM MỚI (1/4) -->
+    [Header("Audio")]
+    public AudioClip meleeAttackSound;
+    public AudioClip kiBlastSound;
+
+    // === THÀNH PHẦN & TRẠNG THÁI ===
+    private Rigidbody2D rb;
     private Animator anim;
-    private Vector3 startPos;
+    private AudioSource audioSource; // <-- THÊM MỚI (2/4) -->
+    private Vector3 startPos;
     private bool movingRight = true;
     private bool isBusy = false;
     private BossHealth bossHealth;
@@ -42,7 +48,8 @@ public class BossAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         bossHealth = GetComponent<BossHealth>();
-        startPos = transform.position;
+        audioSource = GetComponent<AudioSource>(); // <-- THÊM MỚI (3/4) -->
+        startPos = transform.position;
 
         if (player == null)
         {
@@ -51,13 +58,13 @@ public class BossAI : MonoBehaviour
                 player = playerComponent.transform;
         }
 
-        // KIỂM TRA THAM CHIẾU QUAN TRỌNG (Giúp bạn biết vì sao Boss Crash/Không đánh)
         if (hitEffectPrefab == null)
         {
             Debug.LogError("HIT EFFECT PREFAB BỊ THIẾU! Boss sẽ crash khi tấn công trúng Player. Vui lòng gán trong Inspector.");
         }
     }
 
+    // ... (Hàm Update, Patrol, HandleCombat, AttackSequence, HandleDeath giữ nguyên) ...
     void Update()
     {
         if (isDead) return;
@@ -83,8 +90,6 @@ public class BossAI : MonoBehaviour
             Patrol();
     }
 
-    // --- LOGIC AI ---
-
     void Patrol()
     {
         anim.SetBool("isRunning", true);
@@ -101,7 +106,7 @@ public class BossAI : MonoBehaviour
             }
         }
         else // movingLeft
-        {
+        {
             if (transform.position.x <= leftLimit)
             {
                 Flip();
@@ -137,20 +142,18 @@ public class BossAI : MonoBehaviour
     {
         isBusy = true;
 
-        // Tấn công vật lý (Melee)
-        anim.SetBool("isAttacking", true);
+        // Tấn công vật lý (Melee)
+        anim.SetBool("isAttacking", true);
         yield return new WaitForSeconds(1.0f);
         anim.SetBool("isAttacking", false);
 
         yield return new WaitForSeconds(waitAfterAttack);
 
-        // Tấn công Ki Blast
-        anim.SetBool("isKi", true);
-        // THAY ĐỔI: Sử dụng kiBlastTime để đồng bộ tốt hơn
+        // Tấn công Ki Blast
+        anim.SetBool("isKi", true);
         yield return new WaitForSeconds(kiBlastTime);
         anim.SetBool("isKi", false);
 
-        // THAY ĐỔI: Thời gian cooldown sau khi hoàn thành Animation Ki
         yield return new WaitForSeconds(1.0f);
         isBusy = false;
     }
@@ -165,12 +168,20 @@ public class BossAI : MonoBehaviour
         yield return null;
     }
 
-    // ✅ HÀM GỌI TỪ ANIMATION EVENT: Tấn công vật lý
-    public void DealMeleeDamage()
+
+    // ✅ HÀM GỌI TỪ ANIMATION EVENT: Tấn công vật lý
+    public void DealMeleeDamage()
     {
+        // <-- THÊM MỚI (ÂM THANH ĐÁNH THƯỜNG) (4/4) -->
+        if (audioSource != null && meleeAttackSound != null)
+        {
+            audioSource.PlayOneShot(meleeAttackSound);
+        }
+
         if (bossAttackPoint == null) return;
 
         Collider2D[] hitTargets = Physics2D.OverlapCircleAll(bossAttackPoint.position, bossMeleeRange);
+        // ... (Code còn lại của hàm này giữ nguyên) ...
         foreach (Collider2D target in hitTargets)
         {
             if (target.CompareTag("Player"))
@@ -179,7 +190,6 @@ public class BossAI : MonoBehaviour
                 if (playerScript != null)
                 {
                     playerScript.TakeDamage((int)attackDamage);
-                    // Tạo hiệu ứng (Gây lỗi Null Reference nếu Prefab trống!)
                     if (hitEffectPrefab != null)
                         Instantiate(hitEffectPrefab, target.transform.position, Quaternion.identity);
                 }
@@ -187,48 +197,47 @@ public class BossAI : MonoBehaviour
         }
     }
 
-    // ✅ HÀM GỌI TỪ ANIMATION EVENT: Phóng Ki Blast
-    public void SpawnKiBlast()
+    // ✅ HÀM GỌI TỪ ANIMATION EVENT: Phóng Ki Blast
+    public void SpawnKiBlast()
     {
-        // 1. Kiểm tra tham chiếu
+        // <-- THÊM MỚI (ÂM THANH BẮN CHƯỞNG) -->
+        if (audioSource != null && kiBlastSound != null)
+        {
+            audioSource.PlayOneShot(kiBlastSound);
+        }
+
         if (kiBlastPrefab == null || kiFirePoint == null)
         {
             Debug.LogError("Ki Blast Prefab hoặc Fire Point bị thiếu!");
             return;
         }
 
-        // 2. Tạo viên đạn
-        GameObject kiBlast = Instantiate(kiBlastPrefab, kiFirePoint.position, kiFirePoint.rotation);
-
-        // 3. Lấy Rigidbody2D của viên đạn để di chuyển
+        // ... (Code còn lại của hàm này giữ nguyên) ...
+        GameObject kiBlast = Instantiate(kiBlastPrefab, kiFirePoint.position, kiFirePoint.rotation);
         Rigidbody2D kiRb = kiBlast.GetComponent<Rigidbody2D>();
         float bossDirectionX = transform.localScale.x;
 
         if (kiRb != null)
         {
-            // Tính toán hướng bắn dựa trên hướng nhìn của Boss
             Vector2 shootDirection = (bossDirectionX > 0) ? Vector2.right : Vector2.left;
             kiRb.linearVelocity = shootDirection * kiBlastSpeed;
         }
 
-        // 4. Lật viên đạn để nó quay đúng hướng
         Vector3 kiScale = kiBlast.transform.localScale;
         kiScale.x = Mathf.Abs(kiScale.x) * Mathf.Sign(bossDirectionX);
         kiBlast.transform.localScale = kiScale;
 
-        // 5. Thiết lập thuộc tính của viên đạn
         BossKiBlast kiScript = kiBlast.GetComponent<BossKiBlast>();
         if (kiScript != null)
         {
-            // Vui lòng kiểm tra BossKiBlast.cs có biến public 'hitEffectPrefab' không
             kiScript.hitEffectPrefab = hitEffectPrefab;
-            // Nếu BossKiBlast có biến public damage: kiScript.damage = (int)attackDamage * 2;
         }
     }
 
-    // --- HÀM HỖ TRỢ ---
-    void Flip()
+    // --- HÀM HỖ TRỢ ---
+    void Flip()
     {
+        // ... (Giữ nguyên) ...
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
@@ -237,9 +246,10 @@ public class BossAI : MonoBehaviour
 
     void FlipTowards(float targetX)
     {
+        // ... (Giữ nguyên) ...
         Vector3 scale = transform.localScale;
         if ((targetX > transform.position.x && scale.x < 0) ||
-            (targetX < transform.position.x && scale.x > 0))
+          (targetX < transform.position.x && scale.x > 0))
         {
             scale.x *= -1;
         }
@@ -247,7 +257,7 @@ public class BossAI : MonoBehaviour
     }
 
     private void OnDrawGizmosSelected()
-    {
-        // ... (Không thay đổi)
-    }
+   {
+        // ... (Không thay đổi)
+    }
 }

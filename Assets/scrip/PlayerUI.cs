@@ -1,33 +1,59 @@
 ﻿using UnityEngine;
-using UnityEngine.UI; // Cần thiết để làm việc với các thành phần UI
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerUI : MonoBehaviour
 {
     [Header("UI References")]
-    public Slider healthSlider; // Kéo thả Slider Thanh Máu vào đây
-    public Slider kiSlider;     // Kéo thả Slider Thanh Ki vào đây
+    public Slider healthSlider;
+    public Slider kiSlider;
+    public TextMeshProUGUI dragonBallCountText;
+    public Animator dragonBallIconAnimator;
+    public GameObject gameOverScreen;
 
-    private Player playerScript; // Tham chiếu đến script Player
+    private Player playerScript; // Giữ nguyên
+    private bool slidersInitialized = false; // Giữ nguyên
 
     void Start()
     {
-        // Lấy tham chiếu đến script Player trên cùng đối tượng
-        playerScript = GetComponent<Player>();
+        // Chỉ cần ẩn Game Over UI khi bắt đầu
+        HideGameOverUI();
+    }
 
+    void Update()
+    {
+        // --- LOGIC TÌM PLAYER (Giữ nguyên) ---
         if (playerScript == null)
         {
-            Debug.LogError("Player script not found on the same GameObject!");
-            enabled = false; // Tắt script nếu không tìm thấy Player
-            return;
+            playerScript = FindObjectOfType<Player>();
+            if (playerScript == null)
+            {
+                return;
+            }
+            slidersInitialized = false;
         }
 
-        // Khởi tạo giá trị Max cho Slider
+        // --- KHỞI TẠO SLIDERS (Giữ nguyên) ---
+        if (!slidersInitialized)
+        {
+            InitializeSliders();
+            slidersInitialized = true;
+        }
+
+        // --- CẬP NHẬT UI (Giữ nguyên) ---
+        UpdateHealthUI(playerScript.currentHealth);
+        UpdateKiUI(playerScript.currentKi);
+    }
+
+    // --- HÀM KHỞI TẠO (Giữ nguyên) ---
+    void InitializeSliders()
+    {
+        Debug.Log("Đã tìm thấy Player! Khởi tạo thanh Máu/Ki.");
         if (healthSlider != null)
         {
             healthSlider.maxValue = playerScript.maxHealth;
             healthSlider.value = playerScript.currentHealth;
         }
-
         if (kiSlider != null)
         {
             kiSlider.maxValue = playerScript.maxKi;
@@ -35,14 +61,7 @@ public class PlayerUI : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        // Cập nhật giá trị thanh máu và thanh Ki liên tục trong mỗi frame
-        UpdateHealthUI(playerScript.currentHealth);
-        UpdateKiUI(playerScript.currentKi);
-    }
-
-    // Hàm công khai để cập nhật MÁU (có thể gọi từ TakeDamage)
+    // --- CÁC HÀM CẬP NHẬT (Giữ nguyên) ---
     public void UpdateHealthUI(int newHealth)
     {
         if (healthSlider != null)
@@ -51,12 +70,56 @@ public class PlayerUI : MonoBehaviour
         }
     }
 
-    // Hàm công khai để cập nhật KI
     public void UpdateKiUI(float newKi)
     {
         if (kiSlider != null)
         {
             kiSlider.value = newKi;
+        }
+    }
+
+    public void UpdateDragonBallUI(int count)
+    {
+        if (dragonBallCountText != null)
+        {
+            dragonBallCountText.text = "x " + count.ToString();
+            if (dragonBallIconAnimator != null)
+            {
+                dragonBallIconAnimator.SetTrigger("OnCollect");
+            }
+        }
+    }
+
+    // --- HÀM GAME OVER (Giữ nguyên) ---
+    public void ShowGameOverUI()
+    {
+        if (gameOverScreen != null)
+        {
+            gameOverScreen.SetActive(true);
+        }
+    }
+
+    public void HideGameOverUI()
+    {
+        if (gameOverScreen != null)
+        {
+            gameOverScreen.SetActive(false);
+        }
+    }
+
+    // --- HÀM MỚI (ĐÃ THÊM VÀO) ---
+    // Hàm này dùng để Nút "Chơi Lại" gọi
+    public void OnClick_RestartButton()
+    {
+        // Kiểm tra xem GameManager (luôn sống) có tồn tại không
+        if (GameManager.instance != null)
+        {
+            // Ra lệnh cho GameManager khởi động lại
+            GameManager.instance.RestartGame();
+        }
+        else
+        {
+            Debug.LogError("Không tìm thấy GameManager.instance để Restart!");
         }
     }
 }

@@ -3,13 +3,11 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-    // --- Stats & Configuration ---
-    [Header("Kamehameha")]
+    // --- Stats & Configuration ---
+    [Header("Kamehameha")]
     public GameObject kamehamehaPrefab;
     public Transform kamehamehaFirePoint;
     public float kamehamehaOffset = 0.5f;
-
-    // Khai báo mặc định là 50f/70f
     public float baseKamehamehaDamage = 50f;
     public float ssjKamehamehaDamage = 70f;
 
@@ -18,16 +16,16 @@ public class Player : MonoBehaviour
     public float jumpForce = 8f;
     public int maxHealth = 100;
 
-    // Quản lý Máu bằng Property
-    private int _currentHealth;
+    // Quản lý Máu bằng Property
+    private int _currentHealth;
     public int currentHealth
     {
         get { return _currentHealth; }
         set
         {
             _currentHealth = Mathf.Clamp(value, 0, maxHealth);
-            // ...
-        }
+            // ...
+        }
     }
 
     [Header("Ki System - USP")]
@@ -36,16 +34,16 @@ public class Player : MonoBehaviour
     public float kiCostKamehameha = 50f;
     public float kiDrainSSJ = 5f;
 
-    // Quản lý Ki bằng Property
-    private float _currentKi;
+    // Quản lý Ki bằng Property
+    private float _currentKi;
     public float currentKi
     {
         get { return _currentKi; }
         set
         {
             _currentKi = Mathf.Clamp(value, 0, maxKi);
-            // ...
-        }
+            // ...
+        }
     }
 
     [Header("Melee Combat")]
@@ -56,11 +54,21 @@ public class Player : MonoBehaviour
     [Header("Effects")]
     public GameObject hitEffectPrefab;
 
-    [Header("Components & State")]
+    [Header("Audio")]
+    public AudioClip meleeSound;
+    public AudioClip transformSound;
+    public AudioClip kamehamehaAimSound;  // Thay thế cho kamehamehaSound
+    public AudioClip kamehamehaFireSound; // Âm thanh "HA"
+    public AudioClip deathSound;
+    public AudioClip takeDamageSound; // (Bạn đã yêu cầu thêm cái này)
+
+    [Header("Components & State")]
     private Rigidbody2D rb;
     private Animator anim;
     private Collider2D playerCollider;
-    private bool isGrounded = true;
+    private AudioSource audioSource;
+    private GameManager gameManager; // <-- Code GameManager
+    private bool isGrounded = true;
     private bool isSSJ = false;
     private bool isCastingSkill = false;
     private bool isDead = false;
@@ -68,10 +76,8 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        // ⚡ Gán cứng giá trị mặc định để khắc phục lỗi tham chiếu/serialization.
         baseKamehamehaDamage = 50f;
         ssjKamehamehaDamage = 70f;
-
         Debug.Log($"[PLAYER AWAKE] Sát thương base đã được gán cứng: {baseKamehamehaDamage}");
     }
 
@@ -80,6 +86,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         playerCollider = GetComponent<Collider2D>();
+        audioSource = GetComponent<AudioSource>();
+        gameManager = FindObjectOfType<GameManager>(); // <-- Code GameManager
 
         currentHealth = maxHealth;
         currentKi = 50f;
@@ -88,7 +96,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (isDead) return;
-
         HandleMovement();
         HandleInput();
 
@@ -154,9 +161,15 @@ public class Player : MonoBehaviour
         }
     }
 
+
     // ✅ HÀM GỌI TỪ ANIMATION EVENT: Gây sát thương Melee
     public void DealMeleeDamage()
     {
+        if (audioSource != null && meleeSound != null)
+        {
+            audioSource.PlayOneShot(meleeSound);
+        }
+
         if (meleeAttackPoint == null) return;
 
         float finalDamage = isSSJ ? meleeDamage * 1.5f : meleeDamage;
@@ -188,10 +201,14 @@ public class Player : MonoBehaviour
     {
         if (isCastingSkill || currentKi < kiCostKamehameha) return;
 
+        if (audioSource != null && kamehamehaAimSound != null)
+        {
+            audioSource.PlayOneShot(kamehamehaAimSound);
+        }
+
         isCastingSkill = true;
         currentKi -= kiCostKamehameha;
 
-        // BẮT BUỘC: Đặt Animation Event SpawnKamehameha() trong cả 2 Animation "Chưởng" và "sjChưởng"
         if (isSSJ)
         {
             anim.SetTrigger("sjChưởng");
@@ -202,50 +219,42 @@ public class Player : MonoBehaviour
         }
     }
 
-    // ✅ HÀM GỌI TỪ ANIMATION EVENT (Đã loại bỏ tham số gây lỗi)
-    public void SpawnKamehameha() // <-- Đã xóa (float damageOverride = -1f)
+    // ✅ HÀM GỌI TỪ ANIMATION EVENT
+    public void SpawnKamehameha()
     {
+        if (audioSource != null && kamehamehaFireSound != null)
+        {
+            audioSource.PlayOneShot(kamehamehaFireSound);
+        }
+
         if (kamehamehaPrefab == null || kamehamehaFirePoint == null)
         {
             Debug.LogError("Lỗi: Không gán Prefab Kamehameha hoặc FirePoint!");
             return;
         }
 
-        // Tính toán sát thương CHỈ dựa trên biến đã gán cứng
         float finalDamage = isSSJ ? ssjKamehamehaDamage : baseKamehamehaDamage;
-
-        // 🚨 DEBUG: XÁC NHẬN SÁT THƯƠNG
         Debug.Log($"[PLAYER FIRE] Sát thương Kamehameha tính được: {finalDamage}");
-
-        // BƯỚC 1: Tính toán hướng và vị trí BÙ TRỪ (Offset)
         float gokuDirectionX = Mathf.Sign(transform.localScale.x);
-
-        // Tạo vị trí khởi tạo mới = FirePoint + Offset theo hướng Goku
         Vector3 spawnPosition = kamehamehaFirePoint.position;
-        // Dịch chuyển Kamehameha ra khỏi cơ thể Player
         spawnPosition.x += gokuDirectionX * kamehamehaOffset;
 
-        // BƯỚC 2: Instantiate Kamehameha
         GameObject kamehameha = Instantiate(kamehamehaPrefab, spawnPosition, kamehamehaFirePoint.rotation);
-
-        // BƯỚC 3: Gán Sát thương
         KamehamehaEffect effectScript = kamehameha.GetComponent<KamehamehaEffect>();
         if (effectScript != null)
         {
-            effectScript.SetDamage(finalDamage); // Truyền float
+            effectScript.SetDamage(finalDamage);
         }
         else
         {
             Debug.LogError("Lỗi: Không tìm thấy script KamehamehaEffect trên Prefab Kamehameha! Đã bị xóa hoặc đổi tên.");
         }
 
-        // BƯỚC 4: Lật hướng Kamehameha
         Vector3 currentScale = kamehameha.transform.localScale;
         currentScale.x = Mathf.Abs(currentScale.x) * gokuDirectionX;
         kamehameha.transform.localScale = currentScale;
     }
 
-    // ✅ HÀM GỌI TỪ ANIMATION EVENT (Kết thúc Skill)
     public void EndSkillCast()
     {
         isCastingSkill = false;
@@ -254,6 +263,11 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (currentHealth <= 0) return;
+
+        if (audioSource != null && takeDamageSound != null)
+        {
+            audioSource.PlayOneShot(takeDamageSound);
+        }
 
         currentHealth -= damage;
         anim.SetTrigger("BịHạ");
@@ -271,6 +285,11 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+
         isDead = true;
         anim.SetTrigger("Death");
 
@@ -279,19 +298,25 @@ public class Player : MonoBehaviour
         if (playerCollider != null) playerCollider.enabled = false;
 
         enabled = false;
-        StartCoroutine(GameOverDelay());
+
+        // <-- ĐÃ SỬA (3/3) -->
+        if (gameManager != null)
+        {
+            gameManager.ShowGameOver();
+        }
     }
 
-    IEnumerator GameOverDelay()
-    {
-        yield return new WaitForSeconds(3f);
-        Destroy(gameObject);
-    }
+    // (Hàm GameOverDelay() đã được xóa)
 
     void TransformToggle()
     {
         if (!isSSJ && currentKi > 0)
         {
+            if (audioSource != null && transformSound != null)
+            {
+                audioSource.PlayOneShot(transformSound);
+            }
+
             isSSJ = true;
             anim.SetLayerWeight(1, 1f);
         }
@@ -309,6 +334,8 @@ public class Player : MonoBehaviour
             isGrounded = true;
             anim.SetBool("IsGrounded", true);
         }
+
+        // (Code hội thoại của bạn nằm ở đây sẽ an toàn)
     }
 
     private void OnDrawGizmosSelected()

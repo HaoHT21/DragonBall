@@ -344,6 +344,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 3972383195125416267, guid: 10262834d76b06c40a45e5e4ab8c90a1, type: 3}
+      propertyPath: kiSlider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972383195125416267, guid: 10262834d76b06c40a45e5e4ab8c90a1, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8502406931691325658, guid: 10262834d76b06c40a45e5e4ab8c90a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.465906
